@@ -1,24 +1,24 @@
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <sstream>
-#include "read_names.h"
+#include <stdio.h>
+#include <math.h>
+#include <string>
+#include "read.hpp"
+
+
 
 using namespace std;
 
 int main()
 {
-    //open file
-    ifstream myfile;
-    myfile.open("README.md",ios::in);
-    //if file is open read names and print 
-    if(myfile.is_open())
-    {
-        while(read_names())
-        {
-            cout << get_names();
-        }
-    }
+    string membernames;
+    //create array of strings
+    string fullTeam[4];
+    //call the function from read.cpp to read each of the members names
+    membernames = readReadMe();
+    //print out each members name in the array
+    cout << membernames << " "  << endl;
 
     return 0;
 }
